@@ -1,6 +1,7 @@
 # Basic Authenticator for Streamlit Using Database
 
-Loggin system based on pydal to connect Database
+Loggin system based on pydal to connect Database.
+First user is Admin.
 
 Usage Example
 
