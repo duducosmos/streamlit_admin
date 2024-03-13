@@ -29,17 +29,18 @@ database.define_table("users",
 ```python
 import streamlit as st
 
-from streamlit_sqlauthenticator import STAuthView
+from streamlit_admin import AdminUsers, STAuth
 
 # 
-auth = STAuthView('sqlite://storage.db', './database')
+auth = STAuth('sqlite://storage.db', './database')
+admin = AdminUsers(auth)
 
-
-if auth.session_state['loggedIn'] == False:
-    auth.login_page()
+if admin.session_state['loggedIn'] == False:
+    admin.login_page()
 else:
-    auth.logout_page()
+    admin.logout_page()
     st.write("Oi Mundo")
+
 ```
 
 ![Loggin](./images/init_page.png)
