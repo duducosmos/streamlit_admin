@@ -8,7 +8,7 @@ Usage Example
 STAuthView(databaseInfo, databaseFolder)
 ```
 
-databaseInfo -> see list of database
+databaseInfo -> see list of database \
 databaseFolder -> Folder to save data base info and data
 
 ## User table 
