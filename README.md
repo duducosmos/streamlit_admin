@@ -42,10 +42,13 @@ else:
     st.write("Oi Mundo")
 
 ```
-
+### Login Page
 ![Loggin](./images/init_page.png)
 
+### Sign (Create User) Page
 ![Loggin](./images/sigin.png)
+
+### Home Page with logout button
 
 ![Loggin](./images/logged.png)
 
