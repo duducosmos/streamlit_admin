@@ -2,8 +2,12 @@
 
 Loggin system based on pydal to connect Database.
 First user is Admin.
+## Install
+```bash
+pip install streamlit-admin
+```
 
-Usage Example
+## Usage Example
 
 ```python
 STAuthView(databaseInfo, databaseFolder)
@@ -44,14 +48,14 @@ else:
 
 ```
 ### Login Page
-![Loggin](./images/init_page.png)
+![Loggin](https://raw.githubusercontent.com/duducosmos/streamlit_admin/main/images/init_page.png)
 
 ### Sign (Create User) Page
-![Loggin](./images/sigin.png)
+![Loggin](https://raw.githubusercontent.com/duducosmos/streamlit_admin/main/images/sigin.png)
 
 ### Home Page with logout button
 
-![Loggin](./images/logged.png)
+![Loggin](https://raw.githubusercontent.com/duducosmos/streamlit_admin/main/images/logged.png)
 
 ## List of Database:
 
