@@ -25,5 +25,4 @@ setup(
                       "streamlit",
                       "pandas"
                       ],
-
 )
