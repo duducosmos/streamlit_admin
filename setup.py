@@ -11,7 +11,7 @@ def read(filename):
 setup(
     name="streamlit-admin",
     license="Apache License 2.0",
-    version='0.1.0',
+    version='0.1.1',
     author='Eduardo S. Pereira',
     author_email='pereira.somoza@gmail.com',
     packages=find_packages("src"),
