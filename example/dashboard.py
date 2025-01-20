@@ -5,7 +5,7 @@ from streamlit_admin import AdminUsers, STAuth
 from pages import home
 
 #
-auth = STAuth('sqlite://storage.db', './database')
+auth = STAuth('sqlite://storage.db', './database', pool_size=1)
 admin = AdminUsers(auth)
 
 
@@ -20,7 +20,6 @@ else:
             auth.logout()
 
         if auth.is_admin:
-
 
             page_names_to_funcs = {
                 "Home": home,
@@ -38,6 +37,5 @@ else:
 
         pages_name = st.selectbox("Select a Option",
                                   page_names_to_funcs.keys())
-        
 
     page_names_to_funcs[pages_name]()
