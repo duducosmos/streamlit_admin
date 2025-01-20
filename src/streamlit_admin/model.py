@@ -8,13 +8,13 @@ __DATE = "09/10/2023"
 __version__ = "0.1.0"
 
 
-def model(dbinfo, folder):
+def model(dbinfo, folder, **kwargs):
     """Model Initialization"""
 
     os.makedirs(folder, exist_ok=True)
 
     database = DAL(dbinfo, db_codec='UTF-8',
-                   folder=folder, pool_size=1)
+                   folder=folder, **kwargs)
 
     if 'users' in database.tables:
         print('Users Table Exist...')

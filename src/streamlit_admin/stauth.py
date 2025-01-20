@@ -16,8 +16,8 @@ REGEX = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,7}\b'
 
 
 class STAuth:
-    def __init__(self, dbinfo, folder):
-        self._model = model(dbinfo, folder)
+    def __init__(self, dbinfo, folder, **kwargs):
+        self._model = model(dbinfo, folder, **kwargs)
         self._logged = False
         self._user = None
         if self.database(self.database.users).isempty():
@@ -139,7 +139,6 @@ class STAuth:
             self.update(row['id'], row['role'], row['active'], hashedpass)
         self.database.commit()
         return error
-    
 
     def update_password(self, id, password):
         hashedpass = self.hash_pass(password)
@@ -149,11 +148,10 @@ class STAuth:
         )
         self.database.commit()
 
-
     def delete_users(self, df_users):
         for _, row in df_users.iterrows():
             if self.user['id'] != row['id']:
-                self.database(self.database.users.id ==  row['id']).delete()
+                self.database(self.database.users.id == row['id']).delete()
         self.database.commit()
 
     def update(self, id, role, active, hashedpass=None):
@@ -179,7 +177,7 @@ class STAuth:
                             self.database.users.role,
                             self.database.users.active).as_list()
         return pd.DataFrame(user)
-    
+
     def search_user_by_id(self, id):
         query = self.database(self.database.users.id == id)
         user = query.select(self.database.users.id,
